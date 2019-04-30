@@ -1,9 +1,8 @@
 
-import { Component } from 'react';
-import { addNavigationHelpers } from 'react-navigation';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ThirdNavigation from '../../stack/get-inspired';
+import { ThirdNavigator } from '../../stack/get-inspired';
 
 class ThirdTabNavigation extends Component {
 
@@ -15,13 +14,11 @@ class ThirdTabNavigation extends Component {
   render() {
     const { navigationState, dispatch } = this.props
     return (
-      <ThirdNavigation
-        navigation={
-          addNavigationHelpers({
-            dispatch: dispatch,
-            state: navigationState
-          })
-        }
+      <ThirdNavigator
+        navigation={{
+          dispatch: dispatch,
+          state: navigationState
+        }}
       />
     );
   }

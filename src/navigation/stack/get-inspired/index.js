@@ -1,5 +1,5 @@
 
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import Library from '../../../screen/library';
 
@@ -12,4 +12,4 @@ const stackNavigatorConfiguration = {
   initialRouteName: 'inspired'
 }
 
-export const ThirdNavigator = StackNavigator(routeConfiguration, stackNavigatorConfiguration);
+export const ThirdNavigator = createStackNavigator(routeConfiguration, stackNavigatorConfiguration);

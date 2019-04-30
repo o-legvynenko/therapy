@@ -1,9 +1,8 @@
 
-import { Component } from 'react';
-import { addNavigationHelpers } from 'react-navigation';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ForthNavigation from '../../stack/notification'
+import { ForthNavigator } from '../../stack/notification'
 
 class ForthTabNavigation extends Component {
 
@@ -15,13 +14,11 @@ class ForthTabNavigation extends Component {
   render() {
     const { navigationState, dispatch } = this.props
     return (
-      <ForthNavigation
-        navigation={
-          addNavigationHelpers({
-            dispatch: dispatch,
-            state: navigationState
-          })
-        }
+      <ForthNavigator
+        navigation={{
+          dispatch: dispatch,
+          state: navigationState
+        }}
       />
     );
   }

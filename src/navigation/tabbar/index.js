@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 import { TabBar } from './config';
 
@@ -9,12 +8,10 @@ class TabBarNavigation extends Component {
     const { dispatch, navigationState } = this.props;
     return (
       <TabBar
-        navigation={
-          addNavigationHelpers({
-            dispatch: dispatch,
-            state: navigationState
-          })
-        }
+        navigation={{
+          dispatch: dispatch,
+          state: navigationState
+        }}
       />
     );
   }

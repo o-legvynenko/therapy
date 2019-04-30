@@ -1,5 +1,5 @@
 
-import { TabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 
 import FirstTabNavigation from './library';
 import SecondTabNavigation from './create';
@@ -34,7 +34,7 @@ const tabBarConfiguration = {
   }
 }
 
-export const TabBar = TabNavigator(routeConfiguration,tabBarConfiguration);
+export const TabBar = createBottomTabNavigator(routeConfiguration,tabBarConfiguration);
 
 export const tabBarReducer = (state,action) => {
   if (action.type === 'JUMP_TO_TAB') {

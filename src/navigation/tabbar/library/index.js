@@ -1,9 +1,8 @@
 
-import { Component } from 'react';
-import { addNavigationHelpers } from 'react-navigation';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import FirstNavigation from '../../stack/library'
+import { FirstNavigator } from '../../stack/library'
 
 class FirstTabNavigation extends Component {
 
@@ -15,13 +14,11 @@ class FirstTabNavigation extends Component {
   render() {
     const { navigationState, dispatch } = this.props
     return (
-      <FirstNavigation
-        navigation={
-          addNavigationHelpers({
-            dispatch: dispatch,
-            state: navigationState
-          })
-        }
+      <FirstNavigator
+        navigation={{
+          dispatch: dispatch,
+          state: navigationState
+        }}
       />
     );
   }
